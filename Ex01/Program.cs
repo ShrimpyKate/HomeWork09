@@ -6,9 +6,9 @@
 //N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
 
-int GetNumberByUser();
+int GetNumberByUser()
 {
-  Console.WriteLine("Введите значение n: ");
+  Console.Write("Введите значение n: ");
   int num = Convert.ToInt32(Console.ReadLine());
   return num;
 }
@@ -16,7 +16,8 @@ int GetNumberByUser();
 
 void Numbers(int n)
 {
-  Console.WriteLine(n);
+  if (n != 1) Console.Write($"{n}, ");
+  else Console.Write($"{n}.");
   if (n == 1) return;
   n--;
   Numbers(n);
@@ -24,5 +25,5 @@ void Numbers(int n)
 
 
 
-int numb = GetNumberByUser();
-Numbers(numb);
+int num = GetNumberByUser();
+Numbers(num);
