@@ -13,28 +13,16 @@ int GetNumberByUser()
   return num;
 }
 
-void SumOfNumbersBetweenMandN(int M, int N)
+int CalcSumBetweenNumbers(int n, int m)
 {
-  int sum = 0;
-  int temp=0;
-  
-  for (int i = 0; i < M; i++)
+  if (n == m)
   {
-  // if (N != M) Console.Write($"{N}, ");
-  // else Console.WriteLine($"{N}.");
-  temp+=N;
-  Console.WriteLine(sum);
-  if (N == M) return;
-  N++;
-  sum= temp+N;
-  
+    return m;
   }
-  
-  SumOfNumbersBetweenMandN(M, N);
-  
+  return n + CalcSumBetweenNumbers(n + 1, m);
 }
-Console.WriteLine();
 
 int n = GetNumberByUser();
 int m = GetNumberByUser();
-SumOfNumbersBetweenMandN(m,n);
+int sum = CalcSumBetweenNumbers(n, m);
+Console.WriteLine(sum);
